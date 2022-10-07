@@ -3,8 +3,8 @@ import React from 'react'
 
 export default function Navbar() {
   return (
-    <div className='inset-0 flex items-center px-20 py-5'>
-        <div className='flex gap-10 items-center mr-auto '>
+    <div className='inset-0 fixed h-20 flex items-center px-[75px]'>
+        <div className='flex gap-10 items-center mr-auto text-gray-500 '>
             <Link href='/'>
                <a className='mr-20'>
                <svg width="73" height="41" viewBox="0 0 73 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,7 +20,7 @@ export default function Navbar() {
         </div>
         <div className='flex items-center gap-6'>
             <Link href='/login'>
-                <a className='border border-primary px-8 py-4 rounded-md'>Login</a>
+                <a className='border text-primary border-primary px-8 py-4 rounded-md'>Login</a>
             </Link>
             <Link href='/try-demo' >
                 <a className='bg-primary text-white px-8 py-4 rounded-md'>Try Demo</a>
