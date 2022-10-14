@@ -1,9 +1,11 @@
 import Link from 'next/link'
-import React from 'react'
+import React, {useState} from 'react'
 
 export default function Navbar() {
+    const [showSidebar, setShowSideBar] = useState(false)
   return (
-    <div className='inset-0 fixed h-20 flex items-center px-[75px]'>
+    <div>
+        <nav className='inset-0 fixed h-20 flex items-center lg:px-[75px] px-10 bg-white z-10'>
         <div className='flex gap-10 items-center mr-auto text-gray-500 '>
             <Link href='/'>
                <a className='mr-20'>
@@ -13,12 +15,14 @@ export default function Navbar() {
                 </svg>
                </a>
             </Link>
-            <Link href='/features' >Features</Link>
+           <div className='hidden lg:flex gap-10'>
+           <Link href='/features' >Features</Link>
             <Link href='/support' >Support</Link>
             <Link href='/blog' >Blog</Link>
             <Link href='/pricing' >Pricing</Link>
+           </div>
         </div>
-        <div className='flex items-center gap-6'>
+        <div className='hidden lg:flex items-center gap-6'>
             <Link href='/login'>
                 <a className='border text-primary border-primary px-8 py-4 rounded-md'>Login</a>
             </Link>
@@ -26,6 +30,41 @@ export default function Navbar() {
                 <a className='bg-primary text-white px-8 py-4 rounded-md'>Try Demo</a>
             </Link>
         </div>
+        <div 
+        className="lg:hidden -z-50  tham tham-e-squeeze tham-w-8"
+        onClick={()=> setShowSideBar(!showSidebar)}
+        >
+            <div className="tham-box">
+                <div className="tham-inner" />
+            </div>
+        </div>
+    </nav>
+    <div className={`top-0 fixed h-full w-full z-40  bg-black bg-opacity-10 ease-in-out duration-300 ${
+        showSidebar ? 'translate-x-0' : 'translate-x-full'
+    }`}>
+        <div className=' bg-white fixed top-0 z-40 right-0 md:w-3/6 w-5/6 h-full px-7 flex flex-col drop-shadow-2xl ease-in-out duration-300'>
+        <div 
+        className="lg:hidden -z-50  tham tham-e-squeeze tham-w-8 pt-10"
+        onClick={()=> setShowSideBar(!showSidebar)}
+        >
+            <div className="tham-box">
+                <div className="tham-inner" />
+            </div>
+        </div>
+        <ul className='flex flex-col gap-10 pt-10'>
+            <Link href='/features' >Features</Link>
+            <Link href='/support' >Support</Link>
+            <Link href='/blog' >Blog</Link>
+            <Link href='/pricing' >Pricing</Link>
+            <Link href='/login'>
+                <a className='border text-primary border-primary px-8 py-4 rounded-md'>Login</a>
+            </Link>
+            <Link href='/try-demo' >
+                <a className='bg-primary text-white px-8 py-4 rounded-md'>Try Demo</a>
+            </Link>
+        </ul>
+        </div>
+    </div>
     </div>
   )
 }

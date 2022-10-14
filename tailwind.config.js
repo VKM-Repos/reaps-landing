@@ -18,5 +18,5 @@ module.exports = {
       inter: ["Inter Sans"],
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-hamburgers')],
 }
