@@ -5,17 +5,17 @@ import FooterSection from "components/FooterSection";
 import PricingSection from "components/landingPageComponents/PricingSection";
 import Hero from "/components/landingPageComponents//Hero";
 import Navbar from "/components/Navbar";
+import FeaturesSection from "components/landingPageComponents/FeaturesOverviewSection";
 
 export default function Home() {
   return (
     <div>
-     <Navbar />
-     <Hero />
-     <ApplicationProcessSection />
-     <ClientSection />
-     <PricingSection />
-     <DeliverSection />
-     <FooterSection />
+      <Hero />
+      <ApplicationProcessSection />
+      <FeaturesSection />
+      <ClientSection />
+      <PricingSection />
+      <DeliverSection />
     </div>
   )
 }

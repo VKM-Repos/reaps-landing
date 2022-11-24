@@ -6,11 +6,8 @@ import FooterSection from 'components/FooterSection'
 export default function features() {
   return (
     <div>
-        <Navbar />
-        <FeatureHero />
-        <FeaturesSction />
-
-        <FooterSection />
+      <FeatureHero />
+      <FeaturesSction />
     </div>
   )
 }
