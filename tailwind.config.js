@@ -2,7 +2,7 @@
 const colors = require("tailwindcss/colors");
 const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
-    content: [
+  content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
@@ -11,12 +11,15 @@ module.exports = {
       ...colors,
       primary: '#0077B6',
       heroBg: '#F5FAFC',
+      mobileHeroBg: '#EBEBF3',
+      footerBg: '#0C1534',
     },
-    extend: {},
+    extend: {
+    },
     fontFamily: {
       sans: ["Inter Sans", ...defaultTheme.fontFamily.serif],
       inter: ["Inter Sans"],
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-hamburgers')],
 }
