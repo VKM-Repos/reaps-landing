@@ -4,11 +4,13 @@ import React from "react";
 import Link from "next/link";
 import ReapsLogoWhite from "../icons/reaps-logo-white";
 import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
 
 const Footer = () => {
+  const router = useRouter();
   return (
-    <footer className="z-50 min-h-[40dvh] w-full bg-white py-6">
-      <section className=" mx-auto flex h-full w-[95%] lg:w-[90%] flex-col items-start justify-center space-y-12 rounded-[1.5rem] bg-[#12204F] p-8">
+    <footer className="z-50 min-h-[40dvh] w-full !bg-transparent py-6">
+      <section className=" mx-auto flex h-full w-[95%] max-w-[1400px] flex-col items-start justify-center space-y-12 rounded-[1.5rem] bg-[#12204F] p-8">
         <div className="w-fit ">
           <Link href={`/`}>
             <ReapsLogoWhite />
@@ -117,9 +119,15 @@ const Footer = () => {
           </div>
           <div className="col-span-2">
             <div className="flex flex-col gap-4">
-              <Link href={`/`}>Instagram</Link>
-              <Link href={`/`}>Twitter</Link>
-              <Link href={`/`}>LinkedIn</Link>
+              <Link href={`/`} target="_blank">
+                Instagram
+              </Link>
+              <Link href={`/`} target="_blank">
+                Twitter
+              </Link>
+              <Link href={`/`} target="_blank">
+                LinkedIn
+              </Link>
             </div>
           </div>
         </div>
@@ -134,6 +142,9 @@ const Footer = () => {
               variant="outline"
               size="lg"
               className="text-primary mx-auto flex w-fit items-center justify-center gap-2 bg-white"
+              onClick={() =>
+                router.push(`/try/institution/register?bundle=reaps-software`)
+              }
             >
               <span>Get Started</span>
               <svg

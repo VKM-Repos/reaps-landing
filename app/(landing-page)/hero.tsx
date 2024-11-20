@@ -9,7 +9,7 @@ import { buttonVariants } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section className="bg-[#F5F5F9] w-screen">
+    <section id="hero" className="bg-[#F5F5F9] w-screen">
       <div className="relative flex w-full max-w-[1400px] mx-auto flex-col overflow-hidden ">
         {/* yellow doodle */}
         <svg
@@ -101,17 +101,9 @@ export function Hero() {
                   className={cn(
                     buttonVariants({ variant: "primary", size: "md" })
                   )}
-                  href={`/`}
+                  href={`/try/institution/register?bundle=reaps-software`}
                 >
-                  Get started
-                </Link>
-                <Link
-                  className={cn(
-                    buttonVariants({ variant: "outline", size: "md" })
-                  )}
-                  href={`/`}
-                >
-                  Try Demo
+                  Try for free
                 </Link>
               </span>
             </div>

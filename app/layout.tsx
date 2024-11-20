@@ -4,6 +4,7 @@ import "./globals.css";
 import { siteConfig } from "@/config/site";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import BackgroundWrapper from "@/components/layout/background-wrapper";
 
 const yellixBold = localFont({
   src: "./fonts/Yellix-Bold.woff",
@@ -21,7 +22,6 @@ export const metadata: Metadata = {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
   },
-  // metadataBase: new URL(siteConfig.url),
   description: siteConfig.description,
   keywords: ["Data", "statistics"],
   authors: [
@@ -59,11 +59,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${yellix.variable} ${yellixBold.variable} relative mx-auto w-full !max-w-[1600px] antialiased scroll-smooth`}
+        className={`${yellix.variable} ${yellixBold.variable} relative mx-auto w-full antialiased scroll-smooth`}
       >
-        <Header />
-        <main className="pb-[5rem]">{children}</main>
-        <Footer />
+        <BackgroundWrapper>
+          <Header />
+          <main className="pb-[5rem]">{children}</main>
+          <Footer />
+        </BackgroundWrapper>
       </body>
     </html>
   );

@@ -26,7 +26,7 @@ const benefits_data = [
 
 export function Benefits() {
   return (
-    <section className="bg-accent w-screen">
+    <section id="benefits" className="bg-accent w-screen">
       <div className="relative flex min-h-full w-full max-w-[1400px] mx-auto items-center justify-center overflow-hidden py-[8rem]">
         <div className="mx-auto grid w-[90%] grid-cols-1 items-center justify-items-stretch gap-6 md:grid-cols-2">
           <div className="w-full md:col-span-1">

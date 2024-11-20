@@ -32,35 +32,41 @@ const faqData = [
 
 export function FAQ() {
   return (
-    <section className="relative flex min-h-full w-full items-center justify-center overflow-hidden bg-white py-[8rem] p-2">
-      <div className="font flex w-full flex-col items-center justify-center space-y-4">
-        <span className="text-primary max-w-3xl text-[40px] text-center lg:text-left font-bold leading-normal">
-          Frequently Asked Questions
-        </span>
-        <p className="text-gray-600 text-xl">
-          If you have a question that isn&apos;t answered in our FAQs, please
-          get in touch and let us know.
-        </p>
+    <section id="faq" className="w-screen bg-[#FFF9E5]">
+      <div className="relative flex min-h-full w-full max-w-[1400px] mx-auto items-center justify-center overflow-hidden  py-[8rem] p-2">
+        <div className="font flex w-full flex-col items-center justify-center space-y-4">
+          <span className="text-primary max-w-3xl text-[40px] text-center lg:text-left font-bold leading-normal">
+            Frequently Asked Questions
+          </span>
+          <p className="text-gray-600 text-xl">
+            If you have a question that isn&apos;t answered in our FAQs, please
+            get in touch and let us know.
+          </p>
 
-        <div className="mx-auto w-full overflow-hidden pt-[4rem] md:max-w-[80%]">
-          <Accordion
-            type="single"
-            collapsible
-            className="w-full space-y-4 text-left "
-          >
-            {faqData.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index + 1}`}>
-                <AccordionTrigger>
-                  <span className="!font-light text-primary text-left text-[18px]">
-                    {faq.question}
-                  </span>
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-600 flex flex-wrap">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <div className="mx-auto w-full overflow-hidden pt-[4rem] md:max-w-[80%]">
+            <Accordion
+              type="single"
+              collapsible
+              className="w-full space-y-4 text-left "
+            >
+              {faqData.map((faq, index) => (
+                <AccordionItem
+                  className="bg-[#FFFBF0] border border-[#D4D4D4]"
+                  key={index}
+                  value={`item-${index + 1}`}
+                >
+                  <AccordionTrigger>
+                    <span className="!font-light text-primary text-left text-[18px]">
+                      {faq.question}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 flex flex-wrap">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
       </div>
     </section>
